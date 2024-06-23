@@ -1,1 +1,1 @@
-# vsdsquadron-mini-internship
+# Vsdsquadron-mini-internship
