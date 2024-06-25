@@ -145,23 +145,36 @@ void closeDoor(Elevator *elevator) {
   
 ## 3. Converting the C program to RISC-V instruction set
 * Using the command `riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o elevator.o elevator.c`
+  
   ![RISC-V instructions(O1)-1](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/8f5c62e8-057d-4bb0-a8a5-21b9a9dbeb9a)
 
+
 * In another tab, use the following command to visualize the assembly code `riscv64-unknown-elf-objdump -d elevator.o | less`
+
   ![To get the Output of the instruction](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/595efc05-d3a4-4eed-a042-4925d9fa136c)
+
   
 * To access the main part use command `/main`
+
   ![Searching for the main part-command](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/b13fff4e-0685-4340-b41f-044e6d94e2a6)
 
+
 * Number of instructions are calculated at `-O1`
+
   ![Screenshot 2024-06-25 010055](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/7fcf38a0-ba6e-4f0f-b072-e1462b733f4b)
+
   There are 12 lines of instructions in the main part of the code.
 
+
 * To observe the difference executing the same with -Ofast instead of -O1 as `riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o elevator.o elevator.c`
+
   ![RISC-V instruction(Ofast)](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/153d84a0-c026-44a7-8840-33589eeba998)
 
+
 * Similarly,accessing the main part and the number of instructions are being calculated at `-Ofast`
+
   ![Screenshot 2024-06-25 010356](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/54c71a41-d3c9-453d-bf7d-515aa9e96c80)
+
   There are 11 lines of instructions in the main block when executed at `-Ofast`
   By comparing, the number of instructions are reduced from 12 to 11 at `-Ofast`
   
