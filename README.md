@@ -182,7 +182,7 @@ void closeDoor(Elevator *elevator) {
   To execute the spike simulation of the previous project (Smart elevator controller),to observe with -O1 and -Ofast and to run the RISC-V instructions.
 
 * Compiling the smart elevator controller program using the command `gcc sum1ton.c` and executing the same using the command `./a.out`.
-* Also, executing the same code in RISC-V compiler by calling the program using the command `riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o elevator.o elevator.c` and execting using the spike command `spike pk elevator.o`
+* Also, executing the same code in RISC-V compiler by calling the program using the command `riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o elevator.o elevator.c` and executing using the spike command `spike pk elevator.o`
 * We obtain the same output at both the cases.
 
 ![Output at both cases](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/fad9c6f4-1eb2-4913-bf9a-e7688829d5ac)
