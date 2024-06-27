@@ -177,6 +177,44 @@ void closeDoor(Elevator *elevator) {
 
   There are 11 lines of instructions in the main block when executed at `-Ofast`
   By comparing, the number of instructions are reduced from 12 to 11 at `-Ofast`
+
+# TASK 3
+  To execute the spike simulation of the previous project (Smart elevator controller),to observe with -O1 and -Ofast and to run the RISC-V instructions.
+
+* Compiling the smart elevator controller program using the command `gcc sum1ton.c` and executing the same using the command `./a.out`.
+* Also, executing the same code in RISC-V compiler by calling the program using the command `riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o elevator.o elevator.c` and execting using the spike command `spike pk elevator.o`
+* We obtain the same output at both the cases.
+
+![Output at both cases](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/fad9c6f4-1eb2-4913-bf9a-e7688829d5ac)
+
+
+* To debug,Opening the objdump of the smart elevator controller code using the command `riscv64-unknown-elf-objdump -d elevator.o | less`
+
+ ![less](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/da47034e-fe18-4e82-a37d-2444c4539738)
+ 
+* Furtherly, to debug those instruction got from the objdump, we need to open a debuger and we will be debuggging the spike using the command `spike -d pk elevator.o`
+
+![Debugger](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/d2b6808f-f6b4-4fd9-aece-68a2ceb857d6)
+
+* By using the command `until pc 0 100b0`, the program counter runs from 0 till the assembly code 100b0.
+
+![until 100b0](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/16124c13-4793-4803-9773-82cec46b4bd7)
+
+* To find the contents of a particular assembly code, use the command `reg 0 sp` and by pressing enter the next instruction will be executed.
+
+![sp](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/d8431af8-7e62-4dd4-838c-6c6955ab0a8d)
+
+* By giving the `reg 0 sp` command again, we can find the updated value of the sp-stack pointer.
+* Here, initially the value of sp was `0x0000003ffffffb50` at the next code, the sp is subtracted with the hexadecimal value of `32` which is `20`, furtherly after the execution of the code, the value of sp is updated as `0x0000003ffffffb30`(where addi-add immediate).
+  
+![Screenshot 2024-06-27 124102](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/e3b0a699-8a82-420d-bd64-be7495bd5324)
+
+
+  
+  
+
+
+
   
 
 
