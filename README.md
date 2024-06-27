@@ -208,6 +208,8 @@ void closeDoor(Elevator *elevator) {
 * Here, initially the value of sp was `0x0000003ffffffb50` at the next code, the sp is subtracted with the hexadecimal value of `32` which is `20`, furtherly after the execution of the code, the value of sp is updated as `0x0000003ffffffb30`(where addi-add immediate).
   
 ![Screenshot 2024-06-27 124102](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/e3b0a699-8a82-420d-bd64-be7495bd5324)
+![Screenshot 2024-06-27 125953](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/0349f4cc-27d2-460d-b4a4-bc84bf897ae2)
+
 
 
   
