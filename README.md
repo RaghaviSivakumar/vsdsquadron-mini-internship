@@ -182,8 +182,9 @@ void closeDoor(Elevator *elevator) {
   There are 11 lines of instructions in the main block when executed at `-Ofast`
   By comparing, the number of instructions are reduced from 12 to 11 at `-Ofast`
   </details>
-
-# TASK 3
+<details>
+<summary>TASK 3</summary>
+ <br>
   To execute the spike simulation of the previous project (Smart elevator controller),to observe with -O1 and -Ofast and to run the RISC-V instructions.
 
 * Compiling the smart elevator controller program using the command `gcc sum1ton.c` and executing the same using the command `./a.out`.
@@ -214,8 +215,10 @@ void closeDoor(Elevator *elevator) {
   
 ![Screenshot 2024-06-27 124102](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/e3b0a699-8a82-420d-bd64-be7495bd5324)
 ![Screenshot 2024-06-27 125953](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/0349f4cc-27d2-460d-b4a4-bc84bf897ae2)
+</details>
 
-## TASK 4
+<details>
+<summary>TASK 4</summary>
 
 ### RISC-V Instruction Types
 * R-type instructions for register-register operations
@@ -245,7 +248,7 @@ B-type instructions are mainly used as branch instructions, but they are conditi
 #### J-TYPE
 The format of this instruction is very similar to U-type, it only have Rd register and immediate and opcode. At the same time, the immediate of J-type is also disrupted. That means that the CPU must first put the immediate numbers together to restore the original immediate numbers when decoding.
 
-
+</details>
 
 
 
