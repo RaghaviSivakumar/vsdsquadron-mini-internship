@@ -6,7 +6,9 @@ The VSDSquadron Mini is a tiny RISC-V development board. It features a 32-bit RI
 * Memory: 2KB SRAM, 16KB Flash.
 * I/O: 15 GPIO pins
 * Communication Interface: USART, I2C, SPI
-## TASK 1
+ <details>
+## <summary>TASK 1</summary>
+<br>   
 To install the RISC-V toolchain using VDI, write a C code to calculate the sum of numbers from 1 to N and analyse the risc assembly code.
 ### 1. Installation of the virtual box
 ![Virtual box installation](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/c766acf2-a5df-48ba-ab58-deda02cb8969)
@@ -33,7 +35,7 @@ To install the RISC-V toolchain using VDI, write a C code to calculate the sum o
 * Number of instructions are calculated,
 
 ![Calculation of riscv instructions](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/4da1e45a-c5c0-4319-b489-2c83a2125c60)
-
+</details>
 
 # TASK 2
 ## SMART ELEVATOR CONTROLLER
