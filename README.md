@@ -7,7 +7,7 @@ The VSDSquadron Mini is a tiny RISC-V development board. It features a 32-bit RI
 * I/O: 15 GPIO pins
 * Communication Interface: USART, I2C, SPI
  <details>
-## <summary>TASK 1</summary>
+<summary>TASK 1</summary>
 <br>   
 To install the RISC-V toolchain using VDI, write a C code to calculate the sum of numbers from 1 to N and analyse the risc assembly code.
 ### 1. Installation of the virtual box
@@ -37,7 +37,9 @@ To install the RISC-V toolchain using VDI, write a C code to calculate the sum o
 ![Calculation of riscv instructions](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/4da1e45a-c5c0-4319-b489-2c83a2125c60)
 </details>
 
-# TASK 2
+<details>
+<summary>TASK 2</summary>
+ <br>
 ## SMART ELEVATOR CONTROLLER
 A smart elevator controller is designed to optimize the operation of an elevator system using advanced algorithms and modern technology. It reduces wait times, improves energy efficiency, and enhances the user experience by dynamically responding to varying demand patterns. Key features may include load sensors, position sensors, occupancy sensors, and intelligent dispatch systems.
 
@@ -179,6 +181,7 @@ void closeDoor(Elevator *elevator) {
 
   There are 11 lines of instructions in the main block when executed at `-Ofast`
   By comparing, the number of instructions are reduced from 12 to 11 at `-Ofast`
+  </details>
 
 # TASK 3
   To execute the spike simulation of the previous project (Smart elevator controller),to observe with -O1 and -Ofast and to run the RISC-V instructions.
