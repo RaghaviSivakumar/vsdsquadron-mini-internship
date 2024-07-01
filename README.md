@@ -232,11 +232,13 @@ void closeDoor(Elevator *elevator) {
 
 #### R-TYPE
 The R-type command format is very clear. In the actual encoding process, the arrangement of encoding positions is meaningful. For example, the encoding position of the three register indexes in different instruction formats are always the same. Index of Rd is at 11-7, Index of rs1 is at 19-15, and Index of rs2 is at 24-20. This is their fixed position. Some instructions may not be useful. The index to the partial register. For example, there is no rs2 in the second instruction type I-type, but there are rs1 and rd and their indexes are in the corresponding positions. For another example, in s-type funct3 is at bits 14-12. The opcode is available in all instruction formats, and the position remains unchanged, always bit 0-6.
+
 ![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/01d43f07-33cb-4d10-a363-b10659c9e282)
 
 
 #### I-TYPE
 The upper 12 bits of I-type is an immediate number. The opcode is different from other instruction formats because the corresponding specific operations are different, and other parts are very similar to R-type.
+
 ![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/b861711c-2089-43f4-a58a-715bcbf7158d)
 ![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/d7dc39a8-61fd-4652-9dc5-65a74052307f)
 
@@ -248,16 +250,19 @@ The characteristic of S-type instruction is that there is no rd register. In thi
 
 #### U-TYPE
 A 20-bit immediate is provided in the U-type instruction. The final operation result is related to the 20-bit immediate, and the result is written back to the rd register. The opcode determines the type of operation. There are no funct3, rs1, rs2, and funct7 in U-type. This type of instruction structure is very simple.
+
 ![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/ed2f9f5a-824e-41b8-87b7-a10349118a08)
 
 
 #### B-TYPE
 B-type instructions are mainly used as branch instructions, but they are conditional Branch. It means to decide whether to jump or not need to depend on whether the condition is valid. The B-type machine code structure is shown in Figure 2-1. The instruction does not include rd register and funct7, but contains rs1, rs2, funct3 and immediate. The immediate is divided into two areas. The encoding of B-type instruction immediate is out of order. The reason is not described in detail here. There is a specific article on the official site explaining why it is out of order. In short, it has been verified that the effect on CPU operation function when the immediate number sequence is in this order is very well. But the immediate is disrupted, so it will be decoded when the CPU executes in the future. After decoding, the CPU needs to restore the disrupted immediate in order. For example, when the CPU gets a B-type instruction, the immediate in it is scrambled, and the CPU needs to arrange the immediate in the order of 12-1 to restore the immediate.
+
 ![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/b463502a-6544-4791-834c-18b8bb14e5aa)
 
 
 #### J-TYPE
 The format of this instruction is very similar to U-type, it only have Rd register and immediate and opcode. At the same time, the immediate of J-type is also disrupted. That means that the CPU must first put the immediate numbers together to restore the original immediate numbers when decoding.
+
 ![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/3b3f4428-09c7-4e03-a585-3f6e0cb94865)
 
 
