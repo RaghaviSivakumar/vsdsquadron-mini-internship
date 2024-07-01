@@ -210,6 +210,22 @@ void closeDoor(Elevator *elevator) {
 ![Screenshot 2024-06-27 124102](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/e3b0a699-8a82-420d-bd64-be7495bd5324)
 ![Screenshot 2024-06-27 125953](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/0349f4cc-27d2-460d-b4a4-bc84bf897ae2)
 
+## TASK 4
+
+### RISC-V Instruction Types
+* R-type instructions for register-register operations
+* I-type instructions for immediate and load operations
+* S-type instructions for store operations
+* B-type instructions for conditional branch operations
+* U-type instructions for long immediate
+* J-type instructions for unconditional jumps.
+
+![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/46c7bc3a-ef90-449b-862b-4250d94e3a50)
+
+
+
+
+
 
 
   
