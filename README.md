@@ -280,6 +280,7 @@ The format of this instruction is very similar to U-type, it only have Rd regist
 * rd(r1)-00001
 * opcode-0110011
 *32-bit code:0000000_00011_00010_000_00001_0110011*
+  `
 
 
 </details>
