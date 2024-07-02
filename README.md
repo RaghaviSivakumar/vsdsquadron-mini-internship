@@ -279,8 +279,161 @@ The format of this instruction is very similar to U-type, it only have Rd regist
 * rd(r1)-00001
 * opcode-0110011
 ```
-*32-bit code:0000000_00011_00010_000_00001_0110011*
+*32-bit code:0000000 00011 00010 000 00001 0110011*
 
+`2.SUB r3,r1,r2`
+```
+* Instruction-R-type
+  According to the structure of R-type
+* funct7(ADD)-0100000
+* rs2(r2)-00010
+* rs1(r1)-00001
+* funct3-000
+* rd(r1)-00011
+* opcode-0110011
+```
+*32-bit code:0100000 00010 00001 000 00011 0110011*
+
+`3.AND r2,r1,r3`
+```
+* Instruction-R-type
+  According to the structure of R-type
+* funct7(ADD)-0000000
+* rs2(r3)-00011
+* rs1(r1)-00001
+* funct3-111
+* rd(r2)-00010
+* opcode-0110011
+```
+*32-bit code:0000000 00011 00001 111 00010 0110011*
+
+`4.OR r8,r2,r5`
+```
+* Instruction-R-type
+  According to the structure of R-type
+* funct7(ADD)-0000000
+* rs2(r5)-00101
+* rs1(r2)-00010
+* funct3-110
+* rd(r2)-01000
+* opcode-0110011
+```
+*32-bit code:0000000 00101 00010 110 01000 0110011*
+
+`5.XOR r8,r1,r4`
+```
+* Instruction-R-type
+  According to the structure of R-type
+* funct7(ADD)-0000000
+* rs2(r4)-00100
+* rs1(r1)-00001
+* funct3-100
+* rd(r8)-01000
+* opcode-0110011
+```
+*32-bit code:0000000 00100 00001 100 01000 0110011*
+
+`6.SLT r10,r2,r4`
+```
+* Instruction-R-type
+  According to the structure of R-type
+* funct7(ADD)-0000000
+* rs2(r4)-00100
+* rs1(r2)-00010
+* funct3-010
+* rd(r2)-01010
+* opcode-0110011
+```
+*32-bit code:0000000 00100 00010 010 01010 0110011*
+
+`7.ADDI r12,r3,5`
+```
+* Instruction-I-type
+  According to the structure of I-type
+* imm[11:0](5)-000000001001
+* rs1(r3)-00011
+* funct3-000
+* rd(r12)-01100
+* opcode-0010011
+```
+*32-bit code:000000001001 00011 000 01100 0010011*
+
+`8.SW r3,r1,4`
+```
+* Instruction-S-type
+  According to the structure of S-type
+* imm[11:5]-0000000
+* rs2(r3)-00011
+* rs1(r1)-00001
+* funct3-010
+* imm[4:0]-00100
+* opcode-0100011
+```
+*32-bit code:0000000 00011 00001 010 00100 0100011*
+
+`9.SRL r16,r11,r2`
+```
+* Instruction-R-type
+  According to the structure of R-type
+* funct7(ADD)-0000000
+* rs2(r2)-00010
+* rs1(r11)-01011
+* funct3-101
+* rd(r2)-10000
+* opcode-0110011
+```
+*32-bit code:0000000 00010 01011 101 10000 0110011*
+
+`10.BNE r0,r1,20`
+```
+* Instruction-B-type
+  According to the structure of B-type
+* offset[12,10:5]-0000001
+* rs2(r1)-00001
+* rs1(r0)-00000
+* funct3-001
+* offset[11,4:1]-01000
+* opcode-1100011
+```
+*32-bit code:0000001 00001 00000 001 01000 1100011*
+
+`11.BEQ r0,r0,15`
+```
+* Instruction-B-type
+  According to the structure of B-type
+* offset[12,10:5]-0000000
+* rs2(r0)-00000
+* rs1(r0)-00000
+* funct3-000
+* offset[11,4:1]-11110
+* opcode-1100011
+```
+*32-bit code:0000000 00000 00000 000 11110 1100011*
+
+`12.LW r13,r11,2`
+```
+* Instruction-I-type
+  According to the structure of I-type
+* imm[11:0](2)-000000000010
+* rs1(r11)-01011
+* funct3-010
+* rd(r13)-01101
+* opcode-0000011
+```
+*32-bit code:000000000010 01011 010 01101 0000011*
+
+`13.SLL r15,r11,r2`
+```
+* Instruction-R-type
+  According to the structure of R-type
+* funct7-0000000
+* rs2(r2)-00010
+* rs1(r11)-01011
+* funct3-001
+* rd(r15)-01111
+* opcode-0110011
+```
+*32-bit code:0000000 00010 01011 001 01111 0110011*
 
 
 </details>
