@@ -265,7 +265,21 @@ The format of this instruction is very similar to U-type, it only have Rd regist
 
 ![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/3b3f4428-09c7-4e03-a585-3f6e0cb94865)
 
+### INSTRUCTIONS and 32 BIT MACHINE CODES
 
+```
+1.ADD r1,r2,r3
+```
+` 
+* Instruction-R-type
+  According to the structure of R-type
+* funct7(ADD)-0000000
+* rs2(r3)-00011
+* rs1(r2)-00010
+* funct3-000
+* rd(r1)-00001
+* opcode-0110011
+*32-bit code:0000000_00011_00010_000_00001_0110011*
 
 
 </details>
