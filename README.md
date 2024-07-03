@@ -9,10 +9,13 @@ The VSDSquadron Mini is a tiny RISC-V development board. It features a 32-bit RI
  <details>
 <summary>TASK 1</summary>
 <br>   
+  
 To install the RISC-V toolchain using VDI, write a C code to calculate the sum of numbers from 1 to N and analyse the risc assembly code.
 ### 1. Installation of the virtual box
+  
 ![Virtual box installation](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/c766acf2-a5df-48ba-ab58-deda02cb8969)
 ### 2. Installation of Ubuntu
+
 ![Installation of Ubuntu](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/103c1e1c-9dc6-4b75-b9e4-9ac2fb3240a3)
 ### 3. C code to execute the sum of numbers from 1 to N
 * Leafpad is installed using the command
@@ -40,6 +43,7 @@ To install the RISC-V toolchain using VDI, write a C code to calculate the sum o
 <details>
 <summary>TASK 2</summary>
  <br>
+ 
 ## SMART ELEVATOR CONTROLLER
 A smart elevator controller is designed to optimize the operation of an elevator system using advanced algorithms and modern technology. It reduces wait times, improves energy efficiency, and enhances the user experience by dynamically responding to varying demand patterns. Key features may include load sensors, position sensors, occupancy sensors, and intelligent dispatch systems.
 
