@@ -486,6 +486,7 @@ Furtherly,the gtkwave window will open.
 ![Screenshot from 2024-07-06 20-31-38](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/89d20d15-158e-4b0f-8da6-7a59d2c8c442)
 
 #### Output waveform:
+* Add the signals from the list and append,furtherly the waveforms will appear.
 
 ##### 1.ADD:
 
@@ -510,20 +511,6 @@ Furtherly,the gtkwave window will open.
 
 ![Screenshot from 2024-07-06 21-03-06](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/4de4cf15-7e94-408d-a199-dac880acb1c5)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 </details>
 
 
