@@ -448,35 +448,36 @@ The format of this instruction is very similar to U-type, it only have Rd regist
  
 ## Using the RISC-V core verilog netlist and testbench for functional simulation experiment.To upload the waveform snapshots for the commands.
 #### 1. Cloning the reference repo:
-By using the command `git clone https://github.com/vinayrayapati/rv32i.git proj name` ,clone the reference repo which contains the verilog netlist and testbench
+* By using the command `git clone https://github.com/vinayrayapati/rv32i.git proj name` ,clone the reference repo which contains the verilog netlist and testbench
 
 ![Screenshot from 2024-07-06 19-43-10](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/d9fe452e-3c7e-484c-a3a3-9a80780426c2)
 
 #### 2. Installation to setup simulation tools:
-To setup the simulation tools such as iverilog and GTKwave, using the command
-`sudo apt update`
+* To setup the simulation tools such as iverilog and GTKwave, using the command
+`sudo apt update` and
 `sudo apt install iverilog gtkwave`
 
 ![Screenshot from 2024-07-06 20-03-20](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/4b68a768-d1b9-4fa6-a199-9d7e23e2d5e9)
 
 
 #### 3. Edit the testbench file:
-Use the command `nano iiitb_rv32i_tb.v`
-Check the testbench format is as below.
+* Use the command `nano iiitb_rv32i_tb.v`
+* Check the testbench format is as below.
+
 ![Screenshot from 2024-07-06 20-19-23](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/792d52f1-1682-4f94-93f1-1ce2476e0c9d)
 ![Screenshot from 2024-07-06 20-15-31](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/b98d1db0-088b-437a-b349-65174dbc8e85)
 
 #### 4. Run the functional simulation:
-To compile and simulate use the commands `iverilog -o rv32i_simulation iiitb_rv32i_tb.v` and `vvp rv32i_simulation`
+* To compile and simulate use the commands `iverilog -o rv32i_simulation iiitb_rv32i_tb.v` and `vvp rv32i_simulation`
 
 ![Screenshot from 2024-07-06 20-26-02](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/8d8768c9-714f-4d7d-b07b-e1fc7a62ae15)
 
 #### 5. View the waveform:
-To view the waveform,use the command
-`gtkwave simulation.vcd`
+* To view the waveform,use the command  `gtkwave simulation.vcd`
 
 ![Screenshot from 2024-07-06 20-29-32](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/2c81f700-4406-4b6a-b8dc-b6a6fec5d4d2)
-If no directory found,use the command `gtkwave simulation.vcd`
+
+* If no directory found,use the command `gtkwave simulation.vcd`
 
 ![Screenshot from 2024-07-06 20-34-58](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/715dabc9-52cd-4b3f-b4e5-48807fdb2f1d)
 
@@ -485,26 +486,27 @@ Furtherly,the gtkwave window will open.
 ![Screenshot from 2024-07-06 20-31-38](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/89d20d15-158e-4b0f-8da6-7a59d2c8c442)
 
 #### Output waveform:
-##### ADD:
+
+##### 1.ADD:
 
 ![Screenshot from 2024-07-06 20-48-44](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/889d0045-cc34-446f-8914-1aab9cbec840)
-##### SUB:
+##### 2.SUB:
 
 ![Screenshot from 2024-07-06 20-54-45](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/608ece20-8fa5-4e48-8ef1-6d37a02a2628)
-##### AND:
+##### 3.AND:
 
 ![Screenshot from 2024-07-06 20-57-14](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/91bda506-1537-4b4e-9e1f-bf5c26547871)
-##### OR:
+##### 4.OR:
 
 ![Screenshot from 2024-07-06 20-59-24](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/cc81e966-2a98-474e-aef2-5cf2bd060850)
-##### XOR:
+##### 5.XOR:
 
 ![Screenshot from 2024-07-06 21-00-52](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/556a7e0d-cc87-4d48-9549-64e8d629e3cc)
 
-##### SLT:
+##### 6.SLT:
 
 ![Screenshot from 2024-07-06 21-02-02](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/da48102b-5bf9-4044-b516-b80a14788beb)
-##### BEQ:
+##### 7.BEQ:
 
 ![Screenshot from 2024-07-06 21-03-06](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/4de4cf15-7e94-408d-a199-dac880acb1c5)
 
