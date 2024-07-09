@@ -530,6 +530,7 @@ Furtherly,the gtkwave window will open.
  * Power Supply
  * Breadboard
  * Jumper Wires
+   
    The CH32V003 RISC-V processor, used in the smart elevator controller project, operates at voltages between 1.8V to 3.6V, featuring GPIO pins for interfacing with external devices and supporting communication protocols like SPI, I2C, and UART. The ultrasonic sensor utilized in the system typically operates at 5V, detecting the distance of objects by emitting and receiving ultrasonic waves and converting this information into electrical signals. The stepper motor, essential to the project, operates within a voltage range suitable for the load and torque requirements of the elevator and responds to control signals for precise movement. The LCD display, operating at 5V, is used to show real-time information about the elevator's status and floor levels. These electrical properties ensure compatibility and effective integration of components, facilitating the automated operation of the smart elevator system.
    
  ## CIRCUIT CONNECTION FOR SMART ELEVATOR CONTROLLER
