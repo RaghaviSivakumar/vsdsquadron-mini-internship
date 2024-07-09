@@ -542,7 +542,8 @@ The LCD display is connected to the CH32V003 processor as follows: The RS (Regis
 
 ## PINOUT DIAGRAM FOR SMART ELEVATOR CONTROLLER
 
-![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/28df0f72-dd2d-4ffe-8fe4-0457da48de60)
+![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/eaeb6c88-8569-4b59-ab15-4292140bf743)
+
 
 ## TABLE FOR PIN CONNECTION
 
