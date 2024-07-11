@@ -545,7 +545,8 @@ The LED lights are connected to the CH32V003 processor as follows: The anode of 
 
 ## PINOUT DIAGRAM FOR SMART ELEVATOR CONTROLLER
 
-![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/ddf513c8-91f4-4d68-9972-f4c2208200dd)
+![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/a837b81d-cc59-4981-b4ca-eba055834896)
+
 
 
 
