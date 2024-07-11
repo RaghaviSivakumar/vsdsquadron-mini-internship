@@ -519,30 +519,34 @@ Furtherly,the gtkwave window will open.
 
  # SMART ELEVATOR CONTROLLER
  ## OVERVIEW
- The Smart Elevator Controller project leverages ultrasonic sensing technology, the CH32V003 RISC-V processor, and an LCD display to create an automated and user-friendly elevator control system. This system operates by detecting the presence and position of individuals within the elevator using an ultrasonic sensor, which sends signals to the CH32V003 RISC-V processor. Upon receiving these signals, the processor activates a stepper motor to move the elevator to the appropriate floor and displays relevant information on the LCD screen. This setup ensures seamless, efficient, and safe operation of the elevator, enhancing user convenience and safety by eliminating the need for manual control.
+The Smart Elevator Controller project leverages ultrasonic sensing technology, the CH32V003 RISC-V processor, a servo motor, a touch sensor, and an LED display to create an automated and user-friendly elevator control system. This system operates by detecting the presence and position of individuals within the elevator using an ultrasonic sensor, which sends signals to the CH32V003 RISC-V processor. Upon receiving these signals, the processor activates a servo motor to move the elevator to the appropriate floor, uses touch sensors to determine the current floor, and displays the floor number using LEDs. This setup ensures seamless, efficient, and safe operation of the elevator, enhancing user convenience and safety by eliminating the need for manual control.
 
  ## COMPONENTS REQUIRED
- * CH32V003X
- * Ultrasonic Sensor (HC-SR04)
- * Stepper Motor (NEMA 17)
- * Stepper Motor Driver (A4988)
- * LCD Display (e.g., 16x2 or 20x4)
- * Power Supply
- * Breadboard
- * Jumper Wires
-   
-   The CH32V003 RISC-V processor, used in the smart elevator controller project, operates at voltages between 1.8V to 3.6V, featuring GPIO pins for interfacing with external devices and supporting communication protocols like SPI, I2C, and UART. The ultrasonic sensor utilized in the system typically operates at 5V, detecting the distance of objects by emitting and receiving ultrasonic waves and converting this information into electrical signals. The stepper motor, essential to the project, operates within a voltage range suitable for the load and torque requirements of the elevator and responds to control signals for precise movement. The LCD display, operating at 5V, is used to show real-time information about the elevator's status and floor levels. These electrical properties ensure compatibility and effective integration of components, facilitating the automated operation of the smart elevator system.
+* CH32V003X
+* Ultrasonic Sensor (HC-SR04)
+* Servo Motor (e.g., MG90S)
+* Touch Sensor
+* LED Lights
+* Resistors (appropriate values for LEDs)
+* Breadboard
+* Jumper Wires
+
+   The CH32V003 RISC-V processor operates at voltages between 1.8V to 3.6V, featuring GPIO pins for interfacing with external devices and supporting communication protocols like SPI, I2C, and UART. The ultrasonic sensor typically operates at 5V, detecting the distance of objects by emitting and receiving ultrasonic waves and converting this information into electrical signals. The servo motor operates within a voltage range suitable for the load and torque requirements of the elevator and responds to control signals for precise movement. The touch sensor is used to detect which floor the elevator is currently at, and the LEDs are used to display the floor number.
+ 
    
  ## CIRCUIT CONNECTION FOR SMART ELEVATOR CONTROLLER
  In the Smart Elevator Controller project, the ultrasonic sensor is connected to the CH32V003 RISC-V processor as follows: The Trigger pin (TRIG) of the ultrasonic sensor, which initiates the ultrasonic pulse, is connected to the PC0 pin of the CH32V003 processor. The Echo pin (ECHO), which receives the reflected pulse and provides a signal indicating the distance, is connected to the PC1 pin of the processor. Additionally, the VCC (power) pin of the ultrasonic sensor is connected to the appropriate voltage supply pin (VCC) on the CH32V003, while the GND (ground) pin of the sensor is connected to the ground pin (GND) of the processor. This setup ensures that the CH32V003 can both send trigger signals and receive echo signals from the ultrasonic sensor, enabling it to detect objects and their distances.
 
-Furthermore, the stepper motor is connected to the CH32V003 processor via the stepper motor driver (A4988) as follows: The STEP pin of the A4988 driver, which receives pulse signals to control the stepper motor's steps, is connected to the PD1 pin of the CH32V003 processor. The DIR pin of the A4988 driver, which receives signals to control the direction of the stepper motor, is connected to the PD2 pin of the processor. Additionally, the VDD pin of the A4988 driver is connected to the appropriate voltage supply pin (VCC) on the processor, while the GND pin of the driver is connected to the ground pin (GND) of the processor. The stepper motor coils are connected to the respective output pins (1A, 1B, 2A, 2B) of the A4988 driver, and the motor power supply (VMOT) is connected to an external power source suitable for the stepper motor.
+Furthermore, the servo motor is connected to the CH32V003 processor as follows: The control pin of the servo motor is connected to the PD1 pin of the CH32V003 processor. Additionally, the VCC pin of the servo motor is connected to the appropriate voltage supply pin (VCC) on the processor, while the GND pin of the servo motor is connected to the ground pin (GND) of the processor.
 
-The LCD display is connected to the CH32V003 processor as follows: The RS (Register Select) pin of the LCD is connected to PC2 on the CH32V003 processor. The E (Enable) pin is connected to PC3. The data pins D4, D5, D6, and D7 of the LCD are connected to PC4, PC5, PC6, and PC7 respectively. Additionally, the VCC (power) pin of the LCD is connected to the appropriate voltage supply pin (VCC) on the CH32V003, while the GND (ground) pin of the LCD is connected to the ground pin (GND) of the processor. This setup allows the CH32V003 processor to control the LCD display and show relevant information.
+The touch sensor is connected to the CH32V003 processor as follows: The output pin of the touch sensor is connected to the PD2 pin of the processor. Additionally, the VCC pin of the touch sensor is connected to the appropriate voltage supply pin (VCC) on the processor, while the GND pin of the touch sensor is connected to the ground pin (GND) of the processor. This setup ensures that the CH32V003 can receive signals from the touch sensor to determine the current floor.
+
+The LED lights are connected to the CH32V003 processor as follows: The anode of each LED is connected to a separate GPIO pin (e.g., PC2, PC3, PC4, PC5) through appropriate current-limiting resistors. The cathode of each LED is connected to the ground pin (GND) of the processor. This setup allows the CH32V003 processor to control the LEDs and display the floor number.
 
 ## PINOUT DIAGRAM FOR SMART ELEVATOR CONTROLLER
 
-![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/eaeb6c88-8569-4b59-ab15-4292140bf743)
+![image](https://github.com/RaghaviSivakumar/vsdsquadron-mini-internship/assets/147801536/ddf513c8-91f4-4d68-9972-f4c2208200dd)
+
 
 
 ## TABLE FOR PIN CONNECTION
@@ -553,43 +557,33 @@ The LCD display is connected to the CH32V003 processor as follows: The RS (Regis
 | --- | --- |
 | VCC | VIN |
 | TRIG | PC0 |
+|ECHO|PC1|
 | GND | GND |
 
-#### 2.Stepper motor driver(A4988) to CH32V003x
+#### 2.Servo motor to CH32V003x
 
-|**Stepper Motor Driver (A4988)** |**CH32V003x**|
-|---|---|
-| VDD                    | VIN           |
-| STEP                   | PD1           |
-| DIR                    | PD2           |
-| GND                    | GND           |
-
-#### 3.Stepper motor(NEMA17) to Stepper Motor Driver (A4988) 
-
-| **Stepper Motor (NEMA 17)** |**Stepper Motor Driver (A4988)** |
-|---|---|
-| Coil 1A                | 1A (A4988)    |
-| Coil 1B                | 1B (A4988)    |
-| Coil 2A                | 2A (A4988)    |
-| Coil 2B                | 2B (A4988)    |
-
-#### 4. LCD Display to CH32V003x
-| **LCD Display** |**CH32V003x**|
+|**Servo motor** |**CH32V003x**|
 |---|---|
 | VCC                    | VIN           |
+| Control                | PD1           |
 | GND                    | GND           |
-| RS                     | PC2           |
-| E                      | PC3           |
-| D4                     | PC4           |
-| D5                     | PC5           |
-| D6                     | PC6           |
-| D7                     | PC7           |
 
-#### 5.External power supply to Stepper Motor Driver (A4988)  
-| **External Power Supply** |**Stepper Motor Driver (A4988)**|
+#### 3.Touch sensor to CH32V003x
+
+| **Touch sensor** |**CH32V003x** |
 |---|---|
-| VMOT                   | VMOT (A4988)  |
-| GND                    | GND (A4988)   |
+| VCC                    | VIN           |
+| Output                 | PD2           |
+| GND                    | GND           |
+#### 4. LED lights to CH32V003x
+| **LED lights** |**CH32V003x**|
+|---|---|
+| LED1                   | PC2           |
+| LED2                   | PC3           |
+| GND                    | GND           |
+
+* The anodes of the LED are connected to the GPIO pins.
+* The cathodes are connected to the ground.
 
 ## CODE
 
@@ -605,19 +599,15 @@ C code for the smart elevator controller
 // Pin definitions
 #define TRIG_PIN    PC0
 #define ECHO_PIN    PC1
-#define STEP_PIN    PD1
-#define DIR_PIN     PD2
-#define RS_PIN      PC2
-#define E_PIN       PC3
-#define D4_PIN      PC4
-#define D5_PIN      PC5
-#define D6_PIN      PC6
-#define D7_PIN      PC7
+#define SERVO_PIN   PD1
+#define TOUCH_PIN   PD2
+#define LED1_PIN    PC2
+#define LED2_PIN    PC3
 
 void GPIO_Init() {
     // Initialize GPIO pins for output/input
-    // Setup TRIG_PIN, STEP_PIN, DIR_PIN, RS_PIN, E_PIN, D4_PIN, D5_PIN, D6_PIN, D7_PIN as outputs
-    // Setup ECHO_PIN as input
+    // Setup TRIG_PIN, SERVO_PIN, LED1_PIN, LED2_PIN as outputs
+    // Setup ECHO_PIN, TOUCH_PIN as inputs
     // You need to write specific code to initialize the GPIO pins as per your hardware setup
 }
 
@@ -648,54 +638,62 @@ uint32_t Ultrasonic_Read() {
     return distance;
 }
 
-void Stepper_Init() {
-    // Initialize the stepper motor driver
+void Servo_Init() {
+    // Initialize the servo motor
     GPIO_Init();
-    GPIO_WriteBit(DIR_PIN, Bit_RESET); // Set direction
 }
 
-void Stepper_Step() {
-    GPIO_WriteBit(STEP_PIN, Bit_SET);
-    delay_us(1000); // Adjust delay as per the stepper motor requirements
-    GPIO_WriteBit(STEP_PIN, Bit_RESET);
-    delay_us(1000);
+void Servo_SetAngle(uint8_t angle) {
+    // Set the servo motor to a specific angle
+    // Convert angle to pulse width
+    uint16_t pulse_width = 1000 + ((angle * 1000) / 180); // 1ms to 2ms pulse width for 0 to 180 degrees
+    GPIO_WriteBit(SERVO_PIN, Bit_SET);
+    delay_us(pulse_width);
+    GPIO_WriteBit(SERVO_PIN, Bit_RESET);
+    delay_us(20000 - pulse_width); // 20ms period - pulse width
 }
 
-void LCD_Init() {
-    // Initialize the LCD display
-    lcd_init(); // Initialize LCD (assumes a library function for LCD initialization)
+void LED_DisplayFloor(uint8_t floor) {
+    // Display the current floor using LEDs
+    GPIO_WriteBit(LED1_PIN, (floor == 0) ? Bit_SET : Bit_RESET);
+    GPIO_WriteBit(LED2_PIN, (floor == 1) ? Bit_SET : Bit_RESET);
 }
 
-void LCD_DisplayDistance(uint32_t distance) {
-    char buffer[16];
-    sprintf(buffer, "Distance: %d cm", distance);
-    lcd_clear();
-    lcd_set_cursor(0, 0);
-    lcd_print(buffer);
+uint8_t TouchSensor_Read() {
+    // Read the current floor from the touch sensor
+    if (GPIO_ReadInputDataBit(TOUCH_PIN) == Bit_SET) {
+        return 1; // Assuming touch sensor indicates the first floor
+    }
+    return 0; // Assuming no touch indicates the ground floor
 }
 
 int main(void) {
     uint32_t distance;
+    uint8_t current_floor = 0;
 
     // Initialize all components
     Ultrasonic_Init();
-    Stepper_Init();
-    LCD_Init();
+    Servo_Init();
+    GPIO_Init();
 
     while (1) {
         // Read distance from the ultrasonic sensor
         distance = Ultrasonic_Read();
 
-        // Display the distance on the LCD
-        LCD_DisplayDistance(distance);
-
-        // Control the stepper motor based on the distance
+        // Determine the floor based on the distance
         if (distance < 10) {
-            // Move the elevator to the next floor
-            for (int i = 0; i < 200; i++) { // Adjust the step count as per your requirement
-                Stepper_Step();
-            }
+            current_floor = TouchSensor_Read();
         }
+
+        // Move the servo motor to the corresponding floor
+        if (current_floor == 0) {
+            Servo_SetAngle(0); // Move to ground floor
+        } else if (current_floor == 1) {
+            Servo_SetAngle(90); // Move to first floor
+        }
+
+        // Display the current floor using LEDs
+        LED_DisplayFloor(current_floor);
 
         // Small delay before the next measurement
         delay_ms(500);
@@ -703,17 +701,8 @@ int main(void) {
 
     return 0;
 }
+
 ```
-* Libraries and Headers: You need to have libraries for LCD, GPIO, and delay functionalities. The lcd.h and delay.h are placeholders for your specific library headers. Ensure you replace them with the correct headers from your development environment.
-
-* Pin Configuration: The code assumes you have functions to configure GPIO pins (GPIO_Init, GPIO_WriteBit, and GPIO_ReadInputDataBit). You need to adjust these functions according to your microcontroller's library and setup.
-
-* Delay Functions: The delay_us and delay_ms functions are assumed to provide microsecond and millisecond delays, respectively. You might need to implement or adjust these functions based on your development environment.
-
-* Stepper Motor Control: The stepper motor control in this example is simplified. Depending on your stepper motor and driver, you might need to adjust the delay and step count to achieve the desired movement.
-
-* LCD Initialization and Control: The lcd_init, lcd_clear, lcd_set_cursor, and lcd_print functions are assumed to be part of your LCD library. Ensure these functions match the library you are using.
-
 
 
 
