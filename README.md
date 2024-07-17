@@ -714,7 +714,15 @@ int main(void) {
 </details>
 
 
-  
+<details>
+ <summary>TASK 7</summary>
+<br>
+
+ # DEMONSTRATION OF THE PROJECT
+ The demonstartion video of the smart elevator controller.
+ 
+ (https://drive.google.com/file/d/1FIdtm-Jhz8_5M5f1hPtYF7V6Ntli6cNO/view?usp=drive_link)
+</details>  
   
 
 
